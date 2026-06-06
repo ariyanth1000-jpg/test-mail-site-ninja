@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Panel</title>
+<title>Responsive Copy Panel</title>
 
 <style>
 *{
@@ -45,7 +45,6 @@ body{
     color:#111;
 }
 
-/* Panel title */
 .panel-title{
     text-align:center;
     font-size:clamp(14px, 3.5vw, 22px);
@@ -54,26 +53,20 @@ body{
     margin:15px 0;
 }
 
-/* BUTTON FIX - SINGLE LINE ONLY */
 .copy-btn{
     width:100%;
     border:none;
     padding:clamp(10px, 3vw, 16px);
     margin:6px 0;
-
     border-radius:12px;
     cursor:pointer;
-
     background:linear-gradient(135deg,#6366f1,#8b5cf6);
     color:white;
     font-weight:600;
-
     font-size:clamp(10px, 3.5vw, 16px);
-
-    white-space:nowrap;       /* এক লাইনে থাকবে */
-    overflow:hidden;          /* বাইরে যাবে না */
-    text-overflow:ellipsis;   /* বেশি বড় হলে ... দেখাবে */
-
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
     transition:.3s;
 }
 
@@ -81,14 +74,13 @@ body{
     transform:translateY(-2px);
 }
 
-/* small text */
 .copy-text{
     text-align:center;
     font-size:clamp(10px, 2.8vw, 14px);
     color:#666;
+    margin-bottom:12px;
 }
 
-/* divider */
 hr{
     border:none;
     height:1px;
@@ -96,7 +88,6 @@ hr{
     background:linear-gradient(to right,transparent,#ccc,transparent);
 }
 
-/* toast */
 .toast{
     position:fixed;
     bottom:20px;
@@ -116,44 +107,46 @@ hr{
 }
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-    <div class="main-title">Premium Panel</div>
+    <div class="main-title">TA Premium Access Panel</div>
 
+    <!-- P2P SMS Panel -->
     <div class="panel-title">P2P SMS Panel</div>
     <button class="copy-btn" onclick="copyText('Trendingacademylimited@gmail.com')">
         Trendingacademylimited@gmail.com
     </button>
-    <div class="copy-text">Copy Email</div>
+    <div class="copy-text">এটা Copy করে E-mail এবং Password এর box বসাবে। </div>
 
     <hr>
 
-    <div class="panel-title">V3 Smart Nexus</div>
-
+    <!-- V3, Smart Plus, Nexus Panel -->
+    <div class="panel-title"> V3, Smart plus, & Nexus Panel</div>
     <button class="copy-btn" onclick="copyText('Trendingacademylimited@gmail.com')">
         Trendingacademylimited@gmail.com
     </button>
+    <div class="copy-text">এটা Copy করে Email এর Box এ বসাবে </div>
 
     <button class="copy-btn" onclick="copyText('Tamim198')">
         Tamim198
     </button>
-
-    <div class="copy-text">Click to Copy</div>
+    <div class="copy-text">এটা Copy করে  Password এর Box এ বসাবে </div>
 
     <hr>
 
-    <div class="panel-title">Cloud Panel</div>
-
+    <!-- Cloud Network Panel -->
+    <div class="panel-title">Cloud Network Panel</div>
     <button class="copy-btn" onclick="copyText('clubt431@gmail.com')">
         clubt431@gmail.com
     </button>
+    <div class="copy-text">এটা Copy করে Email এর Box এ বসাবে</div>
 
     <button class="copy-btn" onclick="copyText('11AA@@@@')">
         11AA@@@@
     </button>
+    <div class="copy-text">এটা Copy করে Password এর Box এ বসাবে </div>
 
 </div>
 
@@ -162,14 +155,10 @@ hr{
 <script>
 function copyText(text){
     navigator.clipboard.writeText(text);
-
     const toast = document.getElementById("toast");
     toast.innerText = "Copied: " + text;
     toast.classList.add("show");
-
-    setTimeout(()=>{
-        toast.classList.remove("show");
-    },2000);
+    setTimeout(()=>{toast.classList.remove("show");},2000);
 }
 </script>
 
